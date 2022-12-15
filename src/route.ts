@@ -3,34 +3,34 @@ import { orderByRoute } from "grimoire-kolmafia";
 
 export const routing: string[] = [
   "Diet/Numberology", // Numberology is always ready at the start of the day
-  "Diet/Sausage", // Eat magical sausages as soon as they are obtained
+  //"Diet/Sausage", // Eat magical sausages as soon as they are obtained
   "Diet/Hourglass",
 
   // Pickup items
   "Misc/Short Cook",
   "Misc/Floundry",
-  "Misc/Voting",
-  "Misc/Acquire Kgnee",
+  //"Misc/Voting",
+  //"Misc/Acquire Kgnee",
   "Misc/Acquire FamEquip",
 
   // Start with the basic leveling tasks
   "Toot/Finish",
-  "Leveling/Cloud Talk",
-  "Leveling/Daycare",
-  "Leveling/Bastille",
+  //"Leveling/Cloud Talk",
+  //"Leveling/Daycare",
+  //"Leveling/Bastille",
   "Leveling/Leaflet",
-  "Leveling/Snojo",
-  "Leveling/Chateau",
+  //"Leveling/Snojo",
+  //"Leveling/Chateau",
 
   // Then do the scaling leveling
-  "Leveling/LOV Tunnel",
-  "Leveling/Witchess",
+  //"Leveling/LOV Tunnel",
+  //"Leveling/Witchess",
   "Leveling/God Lobster",
-  "Leveling/Machine Elf",
+  //"Leveling/Machine Elf",
   "Leveling/Neverending Party",
-  "Leveling/Sausage Fights",
+  //"Leveling/Sausage Fights",
   "Diet/Consume",
-  "Misc/Protonic Ghost", // whenever ghosts are ready
+  //"Misc/Protonic Ghost", // whenever ghosts are ready
 
   // Open up MacGuffin zones
   "Macguffin/Diary",
@@ -102,7 +102,7 @@ export const routing: string[] = [
   "Bat/Finish",
 
   // Obtain available keys before attempting the daily dungeon
-  "Keys/Deck",
+  //"Keys/Deck",
   "Keys/Lockpicking",
 
   "Tower/Finish",

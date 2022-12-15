@@ -203,8 +203,12 @@ export const LevelingQuest: Quest = {
           item: $item`makeshift garbage shirt`,
           get: () => cliExecute("fold makeshift garbage shirt"),
         },
+        {
+          item: $item`Dish of Clarified Butter`,
+          num: 3,
+        }
       ],
-      ready: () => have($familiar`God Lobster`),
+      ready: () => true,// have($familiar`God Lobster`) || have($item`Dish of Clarified Butter`),
       completed: () => get("_godLobsterFights") >= 3 || myLevel() >= args.levelto,
       do: (): void => {
         visitUrl("main.php?fightgodlobster=1");
