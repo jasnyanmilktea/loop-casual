@@ -120,7 +120,7 @@ const Flyers: Task[] = [
 ];
 
 const Lighthouse: Task[] = [
-  // Saber into more lobsterfrogmen
+  //TODO: Autmnaton
   {
     name: "Lighthouse",
     after: ["Enrage"],
@@ -474,6 +474,7 @@ export const WarQuest: Quest = {
       freeaction: true,
     },
     {
+      //TODO: NC Force Skips
       name: "Enrage",
       after: ["Start", "Misc/Unlock Island"],
       acquire: [

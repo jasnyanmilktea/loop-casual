@@ -54,6 +54,7 @@ export const GiantQuest: Quest = {
       choices: { 670: 5, 669: 1, 671: 4 },
     },
     {
+      //TODO: Force NC
       name: "Basement Finish",
       after: ["Basement Search"],
       acquire: [{ item: $item`amulet of extreme plot significance` }],
@@ -84,6 +85,7 @@ export const GiantQuest: Quest = {
       limit: { soft: 20 },
     },
     {
+      // TODO: Is this necessary?
       name: "Unlock HITS",
       after: ["Top Floor"],
       ready: () => shenItem($item`The Eye of the Stars`),

@@ -97,6 +97,7 @@ const Apartment: Task[] = [
     acquire: [{ item: $item`antique machete` }],
   },
   {
+    //TODO: NC Force Skips
     name: "Apartment Files", // Get the last McClusky files here if needed, as a backup plan
     after: ["Office Files"],
     completed: () =>
@@ -115,6 +116,7 @@ const Apartment: Task[] = [
     choices: { 780: 1 },
   },
   {
+    //TODO: NC Force Skips
     name: "Apartment",
     after: ["Open Apartment", "Apartment Files"], // Wait until after all needed pygmy witch lawyers are done
     completed: () => get("hiddenApartmentProgress") >= 7,
@@ -157,6 +159,7 @@ const Office: Task[] = [
     acquire: [{ item: $item`antique machete` }],
   },
   {
+    //TODO: NC Force Skips
     name: "Office Files",
     after: ["Open Office"],
     completed: () =>
@@ -176,6 +179,7 @@ const Office: Task[] = [
     limit: { tries: 10 },
   },
   {
+    //TODO: NC Force Skips
     name: "Office Clip",
     after: ["Office Files", "Apartment Files"],
     acquire: [
@@ -239,6 +243,7 @@ const Hospital: Task[] = [
     acquire: [{ item: $item`antique machete` }],
   },
   {
+    //TODO: NC Force Skips
     name: "Hospital",
     after: ["Open Hospital"],
     acquire: [

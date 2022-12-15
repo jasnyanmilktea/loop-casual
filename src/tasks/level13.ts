@@ -328,6 +328,7 @@ export const TowerQuest: Quest = {
       limit: { tries: 1 },
     },
     {
+      //TODO: Make sure I have Garbage Nova
       name: "Wall of Bones",
       after: ["Wall of Meat"],
       prepare: () => useSkill($skill`Cannelloni Cocoon`),

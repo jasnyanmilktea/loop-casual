@@ -209,6 +209,7 @@ const Dome: Task[] = [
     freeaction: true,
   },
   {
+    //TODO: Worth dropping human smell potion?
     name: "Palindome Dog",
     after: ["Talisman"],
     acquire: [{ item: $item`disposable instant camera` }],

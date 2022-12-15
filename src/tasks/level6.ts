@@ -5,6 +5,7 @@ import { Quest } from "../engine/task";
 import { step } from "grimoire-kolmafia";
 
 export const FriarQuest: Quest = {
+  //TODO: Drop remaining NC Force Skips here
   name: "Friar",
   tasks: [
     {
