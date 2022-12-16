@@ -6,7 +6,7 @@ import {
   myPrimestat,
   runChoice,
   runCombat,
-  totalFreeRests,
+  totalFreeRests, use,
   useSkill,
   visitUrl,
 } from "kolmafia";
@@ -48,6 +48,7 @@ function primestatId(): number {
 export const LevelingQuest: Quest = {
   name: "Leveling",
   tasks: [
+    /*
     {
       name: "Cloud Talk",
       after: [],
@@ -126,6 +127,48 @@ export const LevelingQuest: Quest = {
       },
       limit: { soft: 40 },
     },
+    */
+    {
+      name: "Speakeasy",
+      after: [],
+      completed: () => get("_oliversPlaceFreeFights") <= 0 || myLevel() >= args.levelto,
+      do: $location`An Unusually Quiet Bar Brawl`,
+      combat: new CombatStrategy().kill(),
+      outfit: {
+        modifier: "mainstat, 4exp",
+        equip: $items`makeshift garbage shirt`,
+        familiar: $familiar`Grey Goose`,
+      },
+      limit: { tries: 1 },
+      freecombat: true,
+    },
+    {
+      name: "Seal Fights",
+      after: [],
+      acquire: [
+        {
+          item: $item`Figurine of a wretched-looking seal`,
+          num: 10,
+        },
+        {
+          item: $item`seal-blubber candle`,
+          num: 30,
+        }
+      ],
+      completed: () => get("_sealFigurineUses") >= 0 || myLevel() >= args.levelto,
+      do: (): void => {
+        use(1, $item`Figurine of a wretched-looking seal`)
+        runCombat()
+      },
+      combat: new CombatStrategy().kill(),
+      outfit: {
+        modifier: "mainstat, 4exp, club, 10 familiar experience",
+        familiar: $familiar`Grey Goose`,
+      },
+      limit: { tries: 10 },
+      freecombat: true,
+    },
+      /*
     {
       name: "LOV Tunnel",
       after: [],
@@ -195,6 +238,7 @@ export const LevelingQuest: Quest = {
       limit: { tries: 10 },
       freecombat: true,
     },
+       */
     {
       name: "God Lobster",
       after: [],
@@ -205,13 +249,12 @@ export const LevelingQuest: Quest = {
         },
         {
           item: $item`Dish of Clarified Butter`,
-          num: 3,
         }
       ],
       ready: () => true,// have($familiar`God Lobster`) || have($item`Dish of Clarified Butter`),
       completed: () => get("_godLobsterFights") >= 3 || myLevel() >= args.levelto,
       do: (): void => {
-        visitUrl("main.php?fightgodlobster=1");
+        use(1, $item`Dish of Clarified Butter`)
         runCombat();
         runChoice(3);
       },
@@ -219,11 +262,12 @@ export const LevelingQuest: Quest = {
       outfit: {
         modifier: "mainstat, 4exp, monster level percent",
         equip: $items`makeshift garbage shirt, unbreakable umbrella`,
-        familiar: $familiar`God Lobster`,
+        familiar: $familiar`Grey Goose`,
       },
       limit: { tries: 3 },
       freecombat: true,
     },
+      /*
     {
       name: "Witchess",
       after: [],
@@ -271,6 +315,7 @@ export const LevelingQuest: Quest = {
       limit: { tries: 1 },
       freecombat: true,
     },
+       */
     {
       name: "Neverending Party",
       after: [],
@@ -306,6 +351,7 @@ export const LevelingQuest: Quest = {
       limit: { tries: 11 },
       freecombat: true,
     },
+      /*
     {
       name: "Machine Elf",
       after: [],
@@ -327,6 +373,8 @@ export const LevelingQuest: Quest = {
       limit: { tries: 5 },
       freecombat: true,
     },
+
+       */
     {
       name: "Leaflet",
       after: [],
